@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayush Adarsh - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    .container {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 32px 18px 32px 18px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
+    }
+    .intro {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      margin-bottom: 36px;
+    }
+    .intro img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #1976d2;
+      box-shadow: 0 2px 12px rgba(25, 118, 210, 0.10);
+    }
+    .intro-text {
+      flex: 1;
+    }
+    .intro-text h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin: 0 0 12px 0;
+      color: #1976d2;
+      letter-spacing: 1.2px;
+      text-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+    }
+    .intro-text p {
+      font-size: 1.28rem;
+      font-weight: 400;
+      color: #333;
+      margin: 0;
+      line-height: 1.7;
+      background: linear-gradient(90deg, #e3f0ff 0%, #f8fafc 100%);
+      padding: 10px 18px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.06);
+    }
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+    }
+    .tile {
+      background: #f0f4fa;
+      border-radius: 12px;
+      padding: 32px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: transform 0.15s, box-shadow 0.15s;
+      text-decoration: none;
+      color: #222;
+      font-size: 1.1rem;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .tile:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+      background: #e8f0fe;
+      color: #1976d2;
+    }
+    .tile-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 2rem;
+      color: #1976d2;
+      font-weight: 800;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+    }
+    .custom-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .custom-list li {
+      background: #f8fafc;
+      border-left: 5px solid #1976d2;
+      margin-bottom: 18px;
+      padding: 18px 22px 14px 18px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.06);
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .custom-list li:hover {
+      box-shadow: 0 6px 24px rgba(25, 118, 210, 0.13);
+      border-left: 5px solid #0d47a1;
+    }
+    .custom-list a {
+      color: #1976d2;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.13rem;
+      transition: color 0.2s;
+    }
+    .custom-list a:hover {
+      color: #0d47a1;
+      text-decoration: underline;
+    }
+    .custom-list .desc {
+      color: #444;
+      font-size: 1.04rem;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+    /* Add a little spacing between sections */
+    section {
+      margin-bottom: 44px;
+    }
+    .contact-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background: linear-gradient(90deg, #e3f0ff 0%, #f8fafc 100%);
+      border-radius: 14px;
+      padding: 32px 28px;
+      margin: 36px 0 44px 0;
+      box-shadow: 0 4px 24px rgba(25, 118, 210, 0.10);
+      border-left: 6px solid #1976d2;
+    }
+    .contact-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #1976d2;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-bottom: 10px;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1976d2;
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px 18px;
+      box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .contact-link:hover {
+      background: #1976d2;
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(25, 118, 210, 0.13);
+    }
+    .contact-link svg {
+      width: 22px;
+      height: 22px;
+      vertical-align: middle;
+      fill: currentColor;
+    }
+    .email-text {
+      font-size: 1.13rem;
+      color: #333;
+      margin-top: 8px;
+      font-weight: 500;
+      word-break: break-all;
+    }
+<<<<<<< HEAD
+=======
+    .experience-section {
+      background: linear-gradient(90deg, #f8fafc 0%, #e3f0ff 100%);
+      border-radius: 14px;
+      padding: 32px 28px;
+      margin: 0 0 44px 0;
+      box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
+      border-left: 6px solid #1976d2;
+    }
+    .experience-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #1976d2;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+    .exp-entry {
+      margin-bottom: 22px;
+    }
+    .exp-org {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #0d47a1;
+      margin-bottom: 2px;
+    }
+    .exp-role {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #1976d2;
+      margin-bottom: 2px;
+    }
+    .exp-date-loc {
+      font-size: 0.98rem;
+      color: #555;
+      margin-bottom: 6px;
+    }
+    .exp-desc {
+      font-size: 1.04rem;
+      color: #333;
+      margin-left: 18px;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+>>>>>>> 9ffb57c (Add Experience section and UI improvements)
+    /* UI improvements for sections */
+    @media (max-width: 600px) {
+      .intro {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .container {
+        padding: 8px;
+      }
+      .contact-section {
+        padding: 18px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="intro">
+      <img src="profile.jpeg" alt="Ayush Adarsh Photo" />
+      <div class="intro-text">
+        <h1>Ayush Adarsh</h1>
+        <!-- <p>Hi! I'm Ayush, a passionate developer and researcher interested in building minimalist, impactful solutions. Welcome to my personal site.</p> -->
+        <p>Hi, I'm Ayush, a developer and researcher who genuinely enjoys turning complex problems into clean, working code (and occasionally, mild chaos). I've worked across domains like Computer Vision, NLP, Recommender Systems, and Large Language Models, and I love building systems that are smart, fast, and surprisingly simple. From parallelizing log analyzers with OpenMP and CUDA to experimenting with multimodal AI and building personal assistants that don’t ghost you, I try to keep things both practical and a little fun. This site is a mix of what I’ve built, what I’m learning, and whatever else I find exciting enough to share. Glad you stopped by!</p>
+      </div>
+    </div>
+    <div class="contact-section">
+      <div class="contact-title">Contact & Socials</div>
+      <div class="contact-links">
+        <a class="contact-link" href="https://github.com/ayushadarsh7" target="_blank" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.5 2.87 8.32 6.84 9.67.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg>
+          GitHub
+        </a>
+        <a class="contact-link" href="https://www.linkedin.com/in/ayushadarsh002" target="_blank" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 11.28h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="email-text">
+        <b>Email:</b> <a href="mailto:ayushadarsh2019@gmail.com">ayushadarsh2019@gmail.com</a>
+      </div>
+    </div>
+<<<<<<< HEAD
+=======
+    <div class="experience-section">
+      <div class="experience-title">Experience</div>
+      <div class="exp-entry">
+        <div class="exp-org">Reconfigurable Intelligent Systems Engineering Lab, IIT Madras</div>
+        <div class="exp-role">Intern</div>
+        <div class="exp-date-loc">May 2024 - July 2024 &nbsp; | &nbsp; Chennai</div>
+        <ul class="exp-desc">
+          <li>Worked under Professor N S Narayanaswamy of the Dept. of CSE, IIT Madras, on the development of a Distributed Web Crawler.</li>
+          <li>Integrated a Natural Language Processing (NLP) Model (NLLB-200) to translate crawled web pages into multiple languages.</li>
+          <li>Debugged and wrote code for various components of the distributed web crawler, improving the overall user experience.</li>
+        </ul>
+      </div>
+      <div class="exp-entry">
+        <div class="exp-org">PicAlive</div>
+        <div class="exp-role">Data Scientist Intern</div>
+        <div class="exp-date-loc">August 2024 - November 2024 &nbsp; | &nbsp; Remote</div>
+        <ul class="exp-desc">
+          <li>Worked in the Core AI Team of an Italy-based Computer Vision Startup focused on AI-based face recognition.</li>
+          <li>Applied deep learning methods with various Convolutional Neural Network (CNN) architectures.</li>
+          <li>Extensively utilized PyTorch and TensorFlow for model development and tuning.</li>
+          <li>Fine-tuned pretrained models and trained models from scratch on specific datasets.</li>
+        </ul>
+      </div>
+    </div>
+>>>>>>> 9ffb57c (Add Experience section and UI improvements)
+    <hr style="margin: 40px 0; border: none; border-top: 1px solid #eee;">
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <ul class="custom-list">
+        <li>
+          <a href="https://github.com/ayushadarsh7/AutoPack_Computer_Vision_for_Optimal_Package_Selection" target="_blank">AutoPack - Computer Vision for Optimal Package Selection</a>
+          <div class="desc">A computer vision tool to predict object dimensions and recommend optimal packaging using OpenCV, Scipy, and Streamlit. <br> <b>Features:</b> Dimension prediction, optimal box selection, bin packing, and real-time UI. <br> <b>Team:</b> Akshit, Ankith, Ayush, Panshul.</div>
+        </li>
+        <li>
+          <a href="https://github.com/ayushadarsh7/Anomalyzer-the-log-ananlyser" target="_blank">Anomalyzer - The Log Analyser</a>
+          <div class="desc">A high-speed Linux boot log analyzer powered by C, OpenMP, PCRE, and LLMs. Parses boot logs in parallel, flags anomalies with regex rules, and explains them using AI. <br> <b>Features:</b> Parallel log parsing, anomaly detection, LLM-based explanations, auto-run on system boot.</div>
+        </li>
+        <li>
+          <a href="https://github.com/ayushadarsh7/Shopsmarter" target="_blank">ShopSmarter – Multi-Modal AI Shopping Agent</a>
+          <div class="desc">A multi-modal autonomous agent using LangGraph and LangChain to interpret product images, metadata, and user prompts for intelligent shopping decisions. <br> <b>Features:</b> Goal-driven workflow, cart operations, product recommendations.</div>
+        </li>
+        <li>
+          <b>Distributed Web Crawler</b> (RISE Lab, IIT Madras)
+          <div class="desc">Developed a distributed web crawler with multilingual translation using the NLLB-200 NLP model, improving crawling performance and user experience.</div>
+        </li>
+      </ul>
+    </section>
+    <section id="publications">
+      <h2 class="section-title">Publications</h2>
+      <ul class="custom-list">
+        <li>
+          <b>Knowledge-based Context-Aware Group Recommender System (KCGRS)</b><br>
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167923625000867" target="_blank">Decision Support Systems</a> (Published). Novel group recommender system using Transformers and Neural Networks for group decision support.
+        </li>
+      </ul>
+    </section>
+    <section id="learning">
+      <h2 class="section-title">Learning Projects</h2>
+      <ul class="custom-list">
+        <li>
+          <a href="https://github.com/ayushadarsh7/NLP-Word-Representations-From-Scratch" target="_blank">Word Representations from Scratch</a>
+          <div class="desc">Various word representations in NLP from scratch, including Bag of Words, SVD, and Word2Vec. Hindi words are used, with data crawled from the web for corpus preparation.</div>
+        </li>
+        <li>
+          <a href="https://github.com/ayushadarsh7/Feed_Forward_Neural_Network_From-Scratch" target="_blank">Feed Forward Neural Network from Scratch</a>
+          <div class="desc">Code and mathematical calculations for building a modular neural network from scratch. Supports custom activation functions, layers, and is ready for classification and regression tasks.</div>
+        </li>
+        <li>
+          <a href="https://github.com/ayushadarsh7/Fundamentals-of-Image-Processing" target="_blank">Fundamentals of Image Processing</a>
+          <div class="desc">A collection of Jupyter Notebooks covering key topics in Computer Vision, with mathematical foundations and practical Python implementations. Topics include feature extraction, edge detection, segmentation, and dimensionality reduction.</div>
+        </li>
+      </ul>
+    </section>
+    <section id="interests">
+      <h2 class="section-title">Interests</h2>
+      <ul class="custom-list">
+        <li>LLMs</li>
+        <li>High Performance Computing</li>
+        <li>Network Theory</li>
+        <li>Recommender Systems</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html> 
