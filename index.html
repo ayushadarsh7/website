@@ -542,9 +542,7 @@
 
       try {
         const stored = window.localStorage.getItem('aa-theme');
-        const prefersDark = window.matchMedia &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initial = stored || (prefersDark ? 'dark' : 'light');
+        const initial = stored || 'light';
         applyTheme(initial);
 
         if (btn) {
