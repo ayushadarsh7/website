@@ -15,8 +15,8 @@
     }
     .container {
       max-width: 950px;
-      margin: 40px auto;
-      padding: 32px 18px 32px 18px;
+      margin: 24px auto;
+      padding: 24px 18px 28px 18px;
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
@@ -133,7 +133,16 @@
     }
     /* Add a little spacing between sections */
     section {
-      margin-bottom: 44px;
+      margin-bottom: 28px;
+    }
+    /* Interests in two columns on wider screens */
+    #interests .custom-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px 18px;
+    }
+    #interests .custom-list li {
+      margin-bottom: 0;
     }
     .contact-section {
       display: flex;
@@ -141,8 +150,8 @@
       align-items: flex-start;
       background: linear-gradient(90deg, #e3f0ff 0%, #f8fafc 100%);
       border-radius: 14px;
-      padding: 32px 28px;
-      margin: 36px 0 44px 0;
+      padding: 26px 24px;
+      margin: 24px 0 32px 0;
       box-shadow: 0 4px 24px rgba(25, 118, 210, 0.10);
       border-left: 6px solid #1976d2;
     }
@@ -191,13 +200,11 @@
       font-weight: 500;
       word-break: break-all;
     }
-<<<<<<< HEAD
-=======
     .experience-section {
       background: linear-gradient(90deg, #f8fafc 0%, #e3f0ff 100%);
       border-radius: 14px;
-      padding: 32px 28px;
-      margin: 0 0 44px 0;
+      padding: 26px 24px;
+      margin: 0 0 32px 0;
       box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
       border-left: 6px solid #1976d2;
     }
@@ -235,7 +242,129 @@
       margin-bottom: 0;
       line-height: 1.6;
     }
-    /* UI improvements for sections */ */
+    /* Dark mode */
+    .theme-toggle {
+      margin-left: auto;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #1976d2;
+      background: #ffffff;
+      color: #1976d2;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .theme-toggle:hover {
+      background: #1976d2;
+      color: #ffffff;
+    }
+    body.dark {
+      background:
+        radial-gradient(circle at top left, #1f2937 0, transparent 55%),
+        radial-gradient(circle at top right, #0f172a 0, transparent 55%),
+        #020617;
+      color: #e5e7eb;
+    }
+    body.dark .container {
+      background: #020617;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      border-radius: 22px;
+      border: 1px solid #1f2937;
+    }
+    body.dark .intro-text h1 {
+      color: #60a5fa;
+      text-shadow: 0 4px 14px rgba(37, 99, 235, 0.75);
+    }
+    body.dark .intro-text p {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 64, 175, 0.85));
+      color: #e5e7eb;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(37, 99, 235, 0.4);
+    }
+    body.dark .theme-toggle {
+      border-color: #60a5fa;
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+    }
+    body.dark .theme-toggle:hover {
+      background: #2563eb;
+      color: #f9fafb;
+    }
+    body.dark .contact-section {
+      background: linear-gradient(135deg, #020617, #0b1120);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+      border-left-color: #60a5fa;
+    }
+    body.dark .contact-title,
+    body.dark .section-title,
+    body.dark .experience-title {
+      color: #93c5fd;
+    }
+    body.dark .contact-link {
+      background: #020617;
+      color: #e5e7eb;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.95);
+      border: 1px solid #1f2937;
+    }
+    body.dark .contact-link:hover {
+      background: #2563eb;
+      color: #f9fafb;
+      border-color: #2563eb;
+    }
+    body.dark .tiles .tile {
+      background: #020617;
+      color: #e5e7eb;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.95);
+      border: 1px solid #111827;
+    }
+    body.dark .tile:hover {
+      background: #020617;
+      color: #93c5fd;
+      border-color: #2563eb;
+    }
+    body.dark .custom-list li {
+      background: #020617;
+      border-left-color: #60a5fa;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.95);
+      border-radius: 10px;
+      border-top: 1px solid #020617;
+      border-right: 1px solid #020617;
+      border-bottom: 1px solid #020617;
+    }
+    body.dark .custom-list a {
+      color: #93c5fd;
+    }
+    body.dark .custom-list a:hover {
+      color: #bfdbfe;
+    }
+    body.dark .custom-list .desc {
+      color: #e5e7eb;
+    }
+    body.dark .experience-section {
+      background: linear-gradient(135deg, #020617, #0b1120);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
+      border-left-color: #60a5fa;
+      border-radius: 16px;
+    }
+    body.dark .exp-org {
+      color: #bfdbfe;
+    }
+    body.dark .exp-role {
+      color: #93c5fd;
+    }
+    body.dark .exp-date-loc {
+      color: #9ca3af;
+    }
+    body.dark .exp-desc {
+      color: #e5e7eb;
+    }
+    body.dark hr {
+      border-top-color: #1f2937 !important;
+    }
+    /* UI improvements for sections */
     @media (max-width: 600px) {
       .intro {
         flex-direction: column;
@@ -255,7 +384,13 @@
     <div class="intro">
       <img src="profile.jpeg" alt="Ayush Adarsh Photo" />
       <div class="intro-text">
-        <h1>Ayush Adarsh</h1>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <h1 style="margin-bottom: 0;">Ayush Adarsh</h1>
+          <button id="theme-toggle" class="theme-toggle" type="button">
+            <span id="theme-toggle-icon">🌙</span>
+            <span id="theme-toggle-label">Dark</span>
+          </button>
+        </div>
         <!-- <p>Hi! I'm Ayush, a passionate developer and researcher interested in building minimalist, impactful solutions. Welcome to my personal site.</p> -->
         <p>Hi, I'm Ayush, a developer and researcher who genuinely enjoys turning complex problems into clean, working code (and occasionally, mild chaos). I've worked across domains like Computer Vision, NLP, Recommender Systems, and Large Language Models, and I love building systems that are smart, fast, and surprisingly simple. From parallelizing log analyzers with OpenMP and CUDA to experimenting with multimodal AI and building personal assistants that don’t ghost you, I try to keep things both practical and a little fun. This site is a mix of what I’ve built, what I’m learning, and whatever else I find exciting enough to share. Glad you stopped by!</p>
       </div>
@@ -276,18 +411,16 @@
         <b>Email:</b> <a href="mailto:ayushadarsh2019@gmail.com">ayushadarsh2019@gmail.com</a>
       </div>
     </div>
-<!-- <<<<<<< HEAD
-======= -->
     <div class="experience-section">
       <div class="experience-title">Experience</div>
       <div class="exp-entry">
-        <div class="exp-org">Reconfigurable Intelligent Systems Engineering Lab, IIT Madras</div>
-        <div class="exp-role">Intern</div>
-        <div class="exp-date-loc">May 2024 - July 2024 &nbsp; | &nbsp; Chennai</div>
+        <div class="exp-org">Reflolabs</div>
+        <div class="exp-role">AI Researcher</div>
+        <div class="exp-date-loc">September 2025 - Present &nbsp; | &nbsp; Remote</div>
         <ul class="exp-desc">
-          <li>Worked under Professor N S Narayanaswamy of the Dept. of CSE, IIT Madras, on the development of a Distributed Web Crawler.</li>
-          <li>Integrated a Natural Language Processing (NLP) Model (NLLB-200) to translate crawled web pages into multiple languages.</li>
-          <li>Debugged and wrote code for various components of the distributed web crawler, improving the overall user experience.</li>
+          <li>Building training engines and pipelines for Small Vision Language Models (SVLMs) with a focus on efficient multimodal understanding.</li>
+          <li>Doing research on SVLMs vs. Large Vision Language Models (LVLMs) for out-of-distribution (OOD) tasks and real-world robustness.</li>
+          <li>Designing and training VLMs in low-data regimes, emphasizing data efficiency and practical deployment.</li>
         </ul>
       </div>
       <div class="exp-entry">
@@ -299,6 +432,16 @@
           <li>Applied deep learning methods with various Convolutional Neural Network (CNN) architectures.</li>
           <li>Extensively utilized PyTorch and TensorFlow for model development and tuning.</li>
           <li>Fine-tuned pretrained models and trained models from scratch on specific datasets.</li>
+        </ul>
+      </div>
+      <div class="exp-entry">
+        <div class="exp-org">Reconfigurable Intelligent Systems Engineering Lab, IIT Madras</div>
+        <div class="exp-role">Intern</div>
+        <div class="exp-date-loc">May 2024 - July 2024 &nbsp; | &nbsp; Chennai</div>
+        <ul class="exp-desc">
+          <li>Worked under Professor N S Narayanaswamy of the Dept. of CSE, IIT Madras, on the development of a Distributed Web Crawler.</li>
+          <li>Integrated a Natural Language Processing (NLP) Model (NLLB-200) to translate crawled web pages into multiple languages.</li>
+          <li>Debugged and wrote code for various components of the distributed web crawler, improving the overall user experience.</li>
         </ul>
       </div>
     </div>
@@ -350,6 +493,24 @@
         </li>
       </ul>
     </section>
+    <section id="learning-resources">
+      <h2 class="section-title">Learning Resources</h2>
+      <ul class="custom-list">
+        <li>
+          <a href="https://github.com/ayushadarsh7/Complete-Python" target="_blank">Complete Python</a>
+          <div class="desc">
+            A complete, beginner-friendly collection of Jupyter notebooks to learn Python from scratch and build strong programming fundamentals, gradually progressing to Object-Oriented Programming and core libraries for building machine learning models from scratch.
+            Each notebook is numbered to indicate the recommended learning order and blends concise theory, clear Python syntax walkthroughs, and hands-on examples to cement every concept.
+          </div>
+        </li>
+        <li>
+          <a href="https://github.com/ayushadarsh7/Learning_CPP" target="_blank">Learning C++</a>
+          <div class="desc">
+            A C++ learning repository curated for juniors, designed to help you learn C++ step-by-step—from the fundamentals to more advanced concepts—with an emphasis on clarity, progression, and practical understanding.
+          </div>
+        </li>
+      </ul>
+    </section>
     <section id="interests">
       <h2 class="section-title">Interests</h2>
       <ul class="custom-list">
@@ -360,5 +521,49 @@
       </ul>
     </section>
   </div>
+  <script>
+    (function () {
+      const body = document.body;
+      const btn = document.getElementById('theme-toggle');
+      const icon = document.getElementById('theme-toggle-icon');
+      const label = document.getElementById('theme-toggle-label');
+
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          body.classList.add('dark');
+          icon.textContent = '☀️';
+          label.textContent = 'Light';
+        } else {
+          body.classList.remove('dark');
+          icon.textContent = '🌙';
+          label.textContent = 'Dark';
+        }
+      }
+
+      try {
+        const stored = window.localStorage.getItem('aa-theme');
+        const prefersDark = window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const initial = stored || (prefersDark ? 'dark' : 'light');
+        applyTheme(initial);
+
+        if (btn) {
+          btn.addEventListener('click', function () {
+            const next = body.classList.contains('dark') ? 'light' : 'dark';
+            applyTheme(next);
+            window.localStorage.setItem('aa-theme', next);
+          });
+        }
+      } catch (e) {
+        // Fallback: still wire up the toggle without persistence
+        if (btn) {
+          btn.addEventListener('click', function () {
+            const next = body.classList.contains('dark') ? 'light' : 'dark';
+            applyTheme(next);
+          });
+        }
+      }
+    })();
+  </script>
 </body>
 </html> 
