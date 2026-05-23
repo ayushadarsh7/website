@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const projects = [
+  {
+    title: 'Anomalyzer - The Log Analyser',
+    url: 'https://github.com/ayushadarsh7/Anomalyzer-the-log-ananlyser',
+    description: 'A high-speed Linux boot log analyzer powered by C, OpenMP, PCRE, and LLMs. It parses boot logs in parallel, flags anomalies with regex rules, and explains them using AI — all automated at system boot via cron.',
+    tags: ['C', 'OpenMP', 'PCRE', 'LLMs', 'Linux'],
+  },
+  {
+    title: 'LLMLens - Observability Layer for your LLM',
+    url: 'https://github.com/ayushadarsh7/LLMLens-observability-layer-for-your-LLM',
+    description: 'A production-grade FastAPI backend that wraps Google Gemini models behind an observability layer. Every LLM call is logged, quality-tagged, and queryable through analytics endpoints.',
+    tags: ['Python', 'FastAPI', 'Gemini', 'Observability'],
+  },
+  {
+    title: 'ShopSmarter',
+    url: 'https://github.com/ayushadarsh7/Shopsmarter',
+    description: 'AI-powered personal shopping assistant that uses multi-modal vision + LLMs to analyze images and deliver context-aware product recommendations.',
+    tags: ['JavaScript', 'Multi-Modal AI', 'LLMs'],
+  },
+  {
+    title: 'Confirmo AI - Voice Agent for High-Risk Wire Confirmation',
+    url: 'https://github.com/ayushadarsh7/Confirmo-AI--voice-agent-for-high-risk-wire-confirmation',
+    description: 'A voice-enabled AI agent that confirms or stops high-risk wire transfers in a short phone call. It performs multi-step identity verification, human liveness checks, fetches amount & payee from an API, and executes approve/cancel with full audit logs.',
+    tags: ['Python', 'Voice AI', 'Security', 'FinTech'],
+  },
+];
+
+const learningProjects = [
+  {
+    title: 'Word Representations from Scratch',
+    url: 'https://github.com/ayushadarsh7/NLP-Word-Representations-From-Scratch',
+    description: 'Various word representations in NLP from scratch, including Bag of Words, SVD, and Word2Vec with Hindi words.',
+  },
+  {
+    title: 'Feed Forward Neural Network from Scratch',
+    url: 'https://github.com/ayushadarsh7/Feed_Forward_Neural_Network_From-Scratch',
+    description: 'Code and mathematical calculations for building a modular neural network from scratch.',
+  },
+  {
+    title: 'Fundamentals of Image Processing',
+    url: 'https://github.com/ayushadarsh7/Fundamentals-of-Image-Processing',
+    description: 'Jupyter Notebooks covering key topics in Computer Vision with mathematical foundations and Python implementations.',
+  },
+];
+
+const resources = [
+  {
+    title: 'Complete Python',
+    url: 'https://github.com/ayushadarsh7/Complete-Python',
+    description: 'A complete, beginner-friendly collection of Jupyter notebooks to learn Python from scratch, progressing to OOP and ML fundamentals.',
+  },
+  {
+    title: 'Learning C++',
+    url: 'https://github.com/ayushadarsh7/Learning_CPP',
+    description: 'A C++ learning repository curated for juniors, designed to help learn C++ step-by-step from fundamentals to advanced concepts.',
+  },
+];
+---
+
+<Layout title="Portfolio - Ayush Adarsh">
+  <Header />
+  <main class="flex-1 max-w-4xl mx-auto px-6 py-16">
+    <h1 class="text-3xl md:text-4xl font-black text-warm-900 dark:text-warm-50 mb-4">Portfolio</h1>
+    <p class="text-warm-500 dark:text-warm-400 mb-12">Things I've built.</p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {projects.map((project) => (
+        <a href={project.url} target="_blank" rel="noopener noreferrer" class="group bg-white dark:bg-warm-900 rounded-xl p-6 shadow-sm border border-warm-100 dark:border-warm-800 hover:border-accent-300 dark:hover:border-accent-700 hover:shadow-md transition-all">
+          <h3 class="font-bold text-warm-900 dark:text-warm-50 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">
+            {project.title}
+            <svg class="inline w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </h3>
+          <p class="text-warm-600 dark:text-warm-300 text-sm mt-3 leading-relaxed">{project.description}</p>
+          <div class="flex flex-wrap gap-2 mt-4">
+            {project.tags.map((tag) => (
+              <span class="px-2.5 py-1 text-xs font-medium bg-warm-100 dark:bg-warm-800 text-warm-700 dark:text-warm-200 rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold text-warm-900 dark:text-warm-50 mt-20 mb-6">Learning Projects</h2>
+    <div class="grid md:grid-cols-3 gap-5">
+      {learningProjects.map((project) => (
+        <a href={project.url} target="_blank" rel="noopener noreferrer" class="group bg-white dark:bg-warm-900 rounded-xl p-5 shadow-sm border border-warm-100 dark:border-warm-800 hover:border-accent-300 dark:hover:border-accent-700 transition-all">
+          <h4 class="font-bold text-sm text-warm-900 dark:text-warm-50 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">{project.title}</h4>
+          <p class="text-warm-500 dark:text-warm-400 text-xs mt-2 leading-relaxed">{project.description}</p>
+        </a>
+      ))}
+    </div>
+
+    <h2 class="text-2xl font-bold text-warm-900 dark:text-warm-50 mt-20 mb-6">Learning Resources</h2>
+    <div class="grid md:grid-cols-2 gap-5">
+      {resources.map((resource) => (
+        <a href={resource.url} target="_blank" rel="noopener noreferrer" class="group bg-white dark:bg-warm-900 rounded-xl p-5 shadow-sm border border-warm-100 dark:border-warm-800 hover:border-accent-300 dark:hover:border-accent-700 transition-all">
+          <h4 class="font-bold text-sm text-warm-900 dark:text-warm-50 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">{resource.title}</h4>
+          <p class="text-warm-500 dark:text-warm-400 text-xs mt-2 leading-relaxed">{resource.description}</p>
+        </a>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Layout>

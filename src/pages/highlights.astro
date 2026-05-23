@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const interests = [
+  { name: 'LLMs', description: 'Large Language Models, prompt engineering, and agentic systems' },
+  { name: 'High Performance Computing', description: 'CUDA, OpenMP, parallel processing' },
+  { name: 'Network Theory', description: 'Graph algorithms, distributed systems' },
+  { name: 'Recommender Systems', description: 'Context-aware, group recommendations, knowledge embeddings' },
+];
+---
+
+<Layout title="Highlights - Ayush Adarsh">
+  <Header />
+  <main class="flex-1 max-w-4xl mx-auto px-6 py-16">
+    <h1 class="text-3xl md:text-4xl font-black text-warm-900 dark:text-warm-50 mb-4">Highlights</h1>
+    <p class="text-warm-500 dark:text-warm-400 mb-12">Publications, research interests, and what excites me.</p>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-warm-900 dark:text-warm-50 mb-6">Publications</h2>
+      <div class="bg-white dark:bg-warm-900 rounded-xl p-6 shadow-sm border border-warm-100 dark:border-warm-800">
+        <div class="flex items-start gap-4">
+          <div class="shrink-0 w-10 h-10 bg-accent-100 dark:bg-accent-950 rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-accent-600 dark:text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-warm-900 dark:text-warm-50">Knowledge-based Context-Aware Group Recommender System (KCGRS)</h3>
+            <p class="text-sm text-warm-500 dark:text-warm-400 mt-1">Decision Support Systems &bull; Published</p>
+            <p class="text-warm-600 dark:text-warm-300 text-sm mt-3 leading-relaxed">
+              Deep learning based group recommender system that uses contextual understanding, knowledge embeddings, and transformers to generate smarter personalized recommendations for groups instead of just individuals.
+            </p>
+            <p class="text-warm-600 dark:text-warm-300 text-sm mt-2 leading-relaxed">
+              Basically solves the eternal "bro where should we eat?" fight by using AI, context awareness, and transformer models to recommend places the whole friend group might actually agree on.
+            </p>
+            <a
+              href="https://www.sciencedirect.com/science/article/abs/pii/S0167923625000867"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-accent-600 dark:text-accent-400 hover:text-accent-700 dark:hover:text-accent-300 transition-colors"
+            >
+              Read Paper
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-warm-900 dark:text-warm-50 mb-6">Research Interests</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        {interests.map((interest) => (
+          <div class="bg-white dark:bg-warm-900 rounded-xl p-5 border border-warm-100 dark:border-warm-800">
+            <h3 class="font-bold text-warm-900 dark:text-warm-50">{interest.name}</h3>
+            <p class="text-warm-500 dark:text-warm-400 text-sm mt-1">{interest.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

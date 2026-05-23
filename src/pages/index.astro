@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Ayush Adarsh - Developer & Researcher">
+  <Header />
+  <main class="flex-1">
+    <section class="max-w-4xl mx-auto px-6 py-20 md:py-32">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="shrink-0">
+          <img
+            src="/profile_web.png"
+            alt="Ayush Adarsh"
+            class="w-36 h-36 md:w-44 md:h-44 rounded-full object-cover ring-4 ring-accent-200 dark:ring-accent-800 shadow-xl"
+          />
+        </div>
+        <div class="text-center md:text-left">
+          <p class="text-accent-600 dark:text-accent-400 font-medium mb-2">Hello, I'm</p>
+          <h1 class="text-4xl md:text-5xl font-black text-warm-900 dark:text-warm-50 mb-5 leading-tight">
+            Ayush Adarsh
+          </h1>
+          <p class="text-lg text-warm-600 dark:text-warm-300 leading-relaxed max-w-xl">
+            Engineer and researcher studying at Indian Institute of Technology Madras, working across pretty much every corner of AI: Computer Vision, NLP, Recommender Systems, LLMs, agentic systems, and distributed AI infrastructure.
+          </p>
+          <p class="text-lg text-warm-600 dark:text-warm-300 leading-relaxed max-w-xl mt-4">
+            I've worked in both Applied AI Research and Core AI, building systems that go from research papers to production without needing a 47-slide strategy deck in between. Also worked on agentic systems and Forward Deployed Engineering, which basically means learning how humans do their jobs, teaching it to AI, and then using the AI to take that job later.
+          </p>
+          <p class="text-lg text-warm-600 dark:text-warm-300 leading-relaxed max-w-xl mt-4">
+            Published one research paper, another currently under review, and spending a good chunk of my time teaching AI to replace my job so I can go build a company instead.
+          </p>
+          <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
+            <a href="/experience" class="px-6 py-3 bg-accent-600 hover:bg-accent-700 text-white font-semibold rounded-lg shadow-sm hover:shadow-md transition-all">
+              My Experience
+            </a>
+            <a href="/projects" class="px-6 py-3 border-2 border-warm-300 dark:border-warm-700 text-warm-700 dark:text-warm-300 font-semibold rounded-lg hover:border-accent-400 hover:text-accent-600 dark:hover:text-accent-400 transition-all">
+              View Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 pb-20">
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/experience" class="group p-6 rounded-xl border border-warm-200 dark:border-warm-800 hover:border-accent-300 dark:hover:border-accent-700 transition-all">
+          <p class="text-2xl font-bold text-warm-900 dark:text-warm-50 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">Experience</p>
+          <p class="text-sm text-warm-500 dark:text-warm-400 mt-2">Novelty, Reflolabs, IIT Madras, and more</p>
+        </a>
+        <a href="/projects" class="group p-6 rounded-xl border border-warm-200 dark:border-warm-800 hover:border-accent-300 dark:hover:border-accent-700 transition-all">
+          <p class="text-2xl font-bold text-warm-900 dark:text-warm-50 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">Portfolio</p>
+          <p class="text-sm text-warm-500 dark:text-warm-400 mt-2">AI agents, LLMs, Parallel Computing</p>
+        </a>
+        <a href="/highlights" class="group p-6 rounded-xl border border-warm-200 dark:border-warm-800 hover:border-accent-300 dark:hover:border-accent-700 transition-all">
+          <p class="text-2xl font-bold text-warm-900 dark:text-warm-50 group-hover:text-accent-600 dark:group-hover:text-accent-400 transition-colors">Highlights</p>
+          <p class="text-sm text-warm-500 dark:text-warm-400 mt-2">Publications, interests, and learning</p>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const experiences = [
+  {
+    org: 'Novelty (Backed by Entrepreneurs First)',
+    role: 'Generative AI Engineer',
+    date: 'April 2026 - Present',
+    location: 'Bengaluru, India',
+    points: [
+      'Building a cool agentic AI system at Novelty, a startup backed by Entrepreneurs First.',
+    ],
+  },
+  {
+    org: 'Reflolabs (Backed by Entrepreneurs First)',
+    role: 'AI Researcher',
+    date: 'September 2025 - March 2026',
+    location: 'Bengaluru, India',
+    points: [
+      'Contributed to the development of Vision Language Models on OOD Tasks.',
+      'Successfully challenged industry giants (Gemini/GPT) by leveraging smaller models like Gemma 4B and Qwen 4B.',
+      'Debunked common myths surrounding Vision Language Model training, paving the way for small/private models in OOD Tasks.',
+      'Engaged in research on private and personalized AI, culminating in a paper currently under review.',
+    ],
+  },
+  {
+    org: 'DoMS, IIT Madras',
+    role: 'Applied AI Researcher',
+    date: 'December 2024 - June 2025',
+    location: 'Chennai',
+    points: [
+      'Developed a context-aware deep learning-based group recommender system to enhance user experience.',
+      'Conducted a comprehensive literature review on existing deep learning context-aware recommender systems.',
+      'Created a novel end-to-end pipeline utilizing knowledge embeddings and transformers for group recommendations.',
+      'Published research on the KCGRS in the journal Decision Support Systems, contributing to the academic community.',
+    ],
+  },
+  {
+    org: 'PicAlive',
+    role: 'Data Scientist Intern',
+    date: 'August 2024 - November 2024',
+    location: 'Remote',
+    points: [
+      'Collaborated with the founding team of PicAlive, a Computer Vision startup in Italy, to develop innovative AI solutions.',
+      'Trained and fine-tuned deep networks, gaining extensive exposure to deep learning pipelines.',
+      'Conducted thorough research by reading numerous academic papers, which fueled my passion for AI research.',
+      'Explored data generation techniques using diffusion models and style transfer networks.',
+    ],
+  },
+  {
+    org: 'Reconfigurable Intelligent Systems Engineering Lab, IIT Madras',
+    role: 'Undergraduate Research Fellow',
+    date: 'May 2024 - July 2024',
+    location: 'Chennai',
+    points: [
+      'Worked at the RISE Lab, Dept. of CSE, IIT Madras on building a distributed web crawler that could aggressively speedrun the internet at scale.',
+      'Built the multilingual translation pipeline so the crawler could understand the internet\'s chaos in more than one language.',
+    ],
+  },
+];
+---
+
+<Layout title="Experience - Ayush Adarsh">
+  <Header />
+  <main class="flex-1 max-w-4xl mx-auto px-6 py-16">
+    <h1 class="text-3xl md:text-4xl font-black text-warm-900 dark:text-warm-50 mb-4">Experience</h1>
+    <p class="text-warm-500 dark:text-warm-400 mb-12">My professional journey so far.</p>
+
+    <div class="relative border-l-2 border-warm-200 dark:border-warm-800 ml-4">
+      {experiences.map((exp) => (
+        <div class="mb-12 ml-8 relative">
+          <div class="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-accent-500 border-4 border-warm-50 dark:border-warm-950"></div>
+          <div class="bg-white dark:bg-warm-900 rounded-xl p-6 shadow-sm border border-warm-100 dark:border-warm-800">
+            <h3 class="text-lg font-bold text-warm-900 dark:text-warm-50">{exp.org}</h3>
+            <p class="text-accent-600 dark:text-accent-400 font-semibold text-sm">{exp.role}</p>
+            <p class="text-sm text-warm-500 dark:text-warm-400 mt-1">{exp.date} &bull; {exp.location}</p>
+            <ul class="mt-4 space-y-2">
+              {exp.points.map((point) => (
+                <li class="text-warm-600 dark:text-warm-300 text-sm leading-relaxed flex gap-2">
+                  <span class="text-accent-500 mt-0.5 shrink-0">&#8226;</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </main>
+  <Footer />
+</Layout>

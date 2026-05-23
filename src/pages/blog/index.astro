@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+---
+
+<Layout title="Blog - Ayush Adarsh">
+  <Header />
+  <main class="flex-1 max-w-4xl mx-auto px-6 py-16">
+    <h1 class="text-3xl md:text-4xl font-black text-warm-900 dark:text-warm-50 mb-4">Blog</h1>
+    <p class="text-warm-500 dark:text-warm-400 mb-12">Thoughts, learnings, and things I find exciting.</p>
+
+    <div class="bg-white dark:bg-warm-900 rounded-xl p-8 border border-warm-100 dark:border-warm-800 text-center">
+      <p class="text-warm-500 dark:text-warm-400 text-lg">Coming soon.</p>
+      <p class="text-warm-400 dark:text-warm-500 text-sm mt-2">Meanwhile, check out my <a href="https://medium.com/@ayushadarsh2019" target="_blank" rel="noopener noreferrer" class="text-accent-600 dark:text-accent-400 hover:underline font-medium">Medium</a> for articles.</p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
