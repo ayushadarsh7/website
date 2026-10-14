@@ -4,4 +4,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://ayushadarsh.online',
   integrations: [tailwind()],
+  redirects: {
+    '/highlights': '/research',
+  },
 });
